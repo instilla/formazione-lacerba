@@ -18,11 +18,13 @@ foreach ($websites as $website) {
 		echo $match." TROVATO\n";
 	}
 
+	echo "\nRicerca di una stringa:\n";
 	$searchString = "marketing";
 	if(strpos($websiteSource, $searchString)){
-		echo "\nRicerca di una stringa:\n";
 		echo $searchString." TROVATO\n";
-	};
+	} else {
+		echo $searchString." NON TROVATO\n";
+	}
 
 	echo "\n---------------------------------------------------------------------\n";
 
