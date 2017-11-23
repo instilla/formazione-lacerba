@@ -5,6 +5,8 @@ $items = ["iphone 7", "samsung s8", "playstation 4 pro", "asus zenbook"];
 
 foreach ($items as $item) {
 
+	echo "Oggetto: ".$item."\n";
+
 	$response = file_get_contents("https://www.trovaprezzi.it/categoria.aspx?id=-1&libera=".str_replace(" ", "+", $item));
 	$domResponse = new \simple_html_dom($response);
 
@@ -22,5 +24,9 @@ foreach ($items as $item) {
 			echo $product->find(".list_item_price", 0)->plaintext."\n";
 		}
 	}
+
+	echo "\n---------------------------------------------------------------------\n";
+
+	sleep(1);
 
 }
